@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <base href="/"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <link href="css/H-ui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/H-ui.admin.css" rel="stylesheet" type="text/css"/>
+    <link href="lib/icheck/icheck.css" rel="stylesheet" type="text/css"/>
+    <link href="lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css"/>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body>
+<div class="row"><br/></div>
+<div class="row">
+    <div class="col-md-2 col-md-offset-1">
+        <label class="form-inline">
+            <span style="font-family: 微软雅黑;font-weight: normal;">学年：</span>
+            <select class="form-control input-sm" style="width: 100px" id="year-date">
+                <option value="2017-2018">2017-2018</option>
+                <option value="2018-2019">2018-2019</option>
+                <option value="2019-2020">2019-2020</option>
+            </select>
+        </label>
+    </div>
+    <div class="col-md-2">
+        <label class="form-inline">
+            <span style="font-family: 微软雅黑;font-weight: normal;">学期：</span>
+        <select class="form-control input-sm" style="width: 100px" id="term-s">
+            <option value="一">1</option>
+            <option value="二">2</option>
+        </select>
+        </label>
+    </div>
+
+</div>
+<div class="row" style="padding-top: 20px">
+    <div class="col-sm-3 col-md-10 col-md-offset-1 sidebar">
+        <table class="table table-bordered">
+            <tr>
+                <td colspan="3" style="text-align: center;font-size: 18px"><span id="year-record-date">2019-2020</span>学年第<span id="term-r">一</span>学期课程成绩</td>
+            </tr>
+            <tr>
+                <td colspan="1">学号：160704027</td>
+                <td colspan="2">姓名：张三</td>
+            </tr>
+            <tr>
+                <td>学院：数学与计算机科学学院</td>
+                <td>专业：信息与计算科学</td>
+                <td>行政班级：信本1601</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3 col-md-10 col-md-offset-1 sidebar">
+        <div class="table-responsive" style="font-size: 8px">
+            <table class="table table-condensed">
+                <thead>
+                <tr>
+                    <th scope="col">课程编号</th>
+                    <th scope="col">课程名</th>
+                    <th scope="col">课程性质</th>
+                    <th scope="col">开课教师</th>
+                    <th scope="col">期末成绩</th>
+                    <th scope="col">总成绩</th>
+                    <th scope="col">补考成绩</th>
+                    <th scope="col">学分</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>数据结构</td>
+                    <td>学位课</td>
+                    <td>李老师</td>
+                    <td>80</td>
+                    <td>82</td>
+                    <td>0</td>
+                    <td>4.5</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#year-date").change(function () {
+            var rs = $(this).val();
+            $("#year-record-date").html(rs);
+        })
+        $("#term-s").change(function () {
+            var rs = $(this).val();
+            $("#term-r").html(rs);
+        })
+    })
+</script>
+</body>
+</html>

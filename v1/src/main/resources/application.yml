@@ -1,0 +1,37 @@
+# 服务端口
+server:
+  port: 9091
+
+spring:
+  # druid数据源配置
+  datasource:
+    url: jdbc:mysql://123.207.253.16:3307/score?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+#    data-password: 123456
+    password: RIdcm0ZZuj02C3tiGPQEoJbmT0zovmqOCZ0S3nqdKKMR6KD2md0R6/q4/8gVXoy1m9mmFYvOiH8SC4UvhmZKFg==
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      filter:
+        config:
+          enabled: true
+      connection-properties: config.decrypt=true;config.decrypt.key=${public-key}
+# druid连接密钥
+public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJ4deOn36T5RPQWiHhrFqUqDwVehzgHU7b7PGeCrW05uEhu9pjC94ytubu8Eo5h7scLKc+SE26mRmUV4qUNIUB0CAwEAAQ==
+
+mybatis:
+  configuration:
+    # mybatis日志设置
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:/mapper/*.xml
+
+# 配置分页插件
+pagehelper:
+  reasonable: true
+  helper-dialect: mysql
+
+# 配置全局日志输出和日滚动日志输出
+logging:
+  config: classpath:config/logback.xml

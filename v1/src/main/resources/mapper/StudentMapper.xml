@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weimin.mapper.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.weimin.entity.Student">
+    <!--@mbg.generated-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="student_id" jdbcType="VARCHAR" property="studentId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="college" jdbcType="VARCHAR" property="college" />
+    <result column="major" jdbcType="VARCHAR" property="major" />
+    <result column="classes_id" jdbcType="BIGINT" property="classesId" />
+    <result column="classes" jdbcType="VARCHAR" property="classes" />
+    <result column="grader" jdbcType="TINYINT" property="grader" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="card_id" jdbcType="VARCHAR" property="cardId" />
+    <result column="images" jdbcType="VARCHAR" property="images" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="admission_time" jdbcType="DATE" property="admissionTime" />
+    <result column="graduation_time" jdbcType="DATE" property="graduationTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, student_id, `name`, sex, college, major, classes_id, classes, grader, phone, 
+    email, birthday, card_id, images, `status`, admission_time, graduation_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from t_student
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from t_student
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.weimin.entity.Student" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_student (student_id, `name`, sex, 
+      college, major, classes_id, 
+      classes, grader, phone, 
+      email, birthday, card_id, 
+      images, `status`, admission_time, 
+      graduation_time)
+    values (#{studentId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{college,jdbcType=VARCHAR}, #{major,jdbcType=VARCHAR}, #{classesId,jdbcType=BIGINT}, 
+      #{classes,jdbcType=VARCHAR}, #{grader,jdbcType=TINYINT}, #{phone,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{cardId,jdbcType=VARCHAR}, 
+      #{images,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{admissionTime,jdbcType=DATE}, 
+      #{graduationTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.weimin.entity.Student" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_student
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="studentId != null">
+        student_id,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="college != null">
+        college,
+      </if>
+      <if test="major != null">
+        major,
+      </if>
+      <if test="classesId != null">
+        classes_id,
+      </if>
+      <if test="classes != null">
+        classes,
+      </if>
+      <if test="grader != null">
+        grader,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="cardId != null">
+        card_id,
+      </if>
+      <if test="images != null">
+        images,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="admissionTime != null">
+        admission_time,
+      </if>
+      <if test="graduationTime != null">
+        graduation_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="studentId != null">
+        #{studentId,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="college != null">
+        #{college,jdbcType=VARCHAR},
+      </if>
+      <if test="major != null">
+        #{major,jdbcType=VARCHAR},
+      </if>
+      <if test="classesId != null">
+        #{classesId,jdbcType=BIGINT},
+      </if>
+      <if test="classes != null">
+        #{classes,jdbcType=VARCHAR},
+      </if>
+      <if test="grader != null">
+        #{grader,jdbcType=TINYINT},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="cardId != null">
+        #{cardId,jdbcType=VARCHAR},
+      </if>
+      <if test="images != null">
+        #{images,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="admissionTime != null">
+        #{admissionTime,jdbcType=DATE},
+      </if>
+      <if test="graduationTime != null">
+        #{graduationTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.weimin.entity.Student">
+    <!--@mbg.generated-->
+    update t_student
+    <set>
+      <if test="studentId != null">
+        student_id = #{studentId,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="college != null">
+        college = #{college,jdbcType=VARCHAR},
+      </if>
+      <if test="major != null">
+        major = #{major,jdbcType=VARCHAR},
+      </if>
+      <if test="classesId != null">
+        classes_id = #{classesId,jdbcType=BIGINT},
+      </if>
+      <if test="classes != null">
+        classes = #{classes,jdbcType=VARCHAR},
+      </if>
+      <if test="grader != null">
+        grader = #{grader,jdbcType=TINYINT},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="cardId != null">
+        card_id = #{cardId,jdbcType=VARCHAR},
+      </if>
+      <if test="images != null">
+        images = #{images,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="admissionTime != null">
+        admission_time = #{admissionTime,jdbcType=DATE},
+      </if>
+      <if test="graduationTime != null">
+        graduation_time = #{graduationTime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.weimin.entity.Student">
+    <!--@mbg.generated-->
+    update t_student
+    set student_id = #{studentId,jdbcType=VARCHAR},
+      `name` = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      college = #{college,jdbcType=VARCHAR},
+      major = #{major,jdbcType=VARCHAR},
+      classes_id = #{classesId,jdbcType=BIGINT},
+      classes = #{classes,jdbcType=VARCHAR},
+      grader = #{grader,jdbcType=TINYINT},
+      phone = #{phone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      card_id = #{cardId,jdbcType=VARCHAR},
+      images = #{images,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=TINYINT},
+      admission_time = #{admissionTime,jdbcType=DATE},
+      graduation_time = #{graduationTime,jdbcType=DATE}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
