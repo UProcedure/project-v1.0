@@ -1,7 +1,7 @@
-package com.weimin.mapper;
+package com.weimin.user.mapper;
 
 import com.weimin.common.base.IBaseDao;
-import com.weimin.entity.Student;
+import com.weimin.user.entity.Student;
 
 /**
  * @author weimin

@@ -1,4 +1,4 @@
-package com.weimin.util;
+package com.weimin.common.ws.util;
 
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;

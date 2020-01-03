@@ -35,3 +35,8 @@ pagehelper:
 # 配置全局日志输出和日滚动日志输出
 logging:
   config: classpath:config/logback.xml
+
+shiro:
+  web:
+    enabled: true
+  loginUrl: /login

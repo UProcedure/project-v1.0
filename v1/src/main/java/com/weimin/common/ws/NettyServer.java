@@ -1,6 +1,6 @@
-package com.weimin.ws;
+package com.weimin.common.ws;
 
-import com.weimin.ws.handler.NettyReadTimeoutHandler;
+import com.weimin.common.ws.handler.NettyReadTimeoutHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;

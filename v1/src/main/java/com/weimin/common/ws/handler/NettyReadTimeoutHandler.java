@@ -1,6 +1,6 @@
-package com.weimin.ws.handler;
+package com.weimin.common.ws.handler;
 
-import com.weimin.util.ChannelUtils;
+import com.weimin.common.ws.util.ChannelUtils;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.weimin.controller;
+package com.weimin.login.controller;
 
 import com.weimin.common.vo.ResultBean;
 import org.springframework.stereotype.Controller;

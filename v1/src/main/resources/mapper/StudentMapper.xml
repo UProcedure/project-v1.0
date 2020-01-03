@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.weimin.mapper.StudentMapper">
-  <resultMap id="BaseResultMap" type="com.weimin.entity.Student">
+<mapper namespace="com.weimin.user.mapper.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.weimin.user.entity.Student">
     <!--@mbg.generated-->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="student_id" jdbcType="VARCHAR" property="studentId" />
@@ -38,7 +38,7 @@
     delete from t_student
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.weimin.entity.Student" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.weimin.user.entity.Student" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into t_student (student_id, `name`, sex, 
       college, major, classes_id, 
@@ -53,7 +53,7 @@
       #{images,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{admissionTime,jdbcType=DATE}, 
       #{graduationTime,jdbcType=DATE})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.weimin.entity.Student" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.weimin.user.entity.Student" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into t_student
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -157,7 +157,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.weimin.entity.Student">
+  <update id="updateByPrimaryKeySelective" parameterType="com.weimin.user.entity.Student">
     <!--@mbg.generated-->
     update t_student
     <set>
@@ -212,7 +212,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.weimin.entity.Student">
+  <update id="updateByPrimaryKey" parameterType="com.weimin.user.entity.Student">
     <!--@mbg.generated-->
     update t_student
     set student_id = #{studentId,jdbcType=VARCHAR},

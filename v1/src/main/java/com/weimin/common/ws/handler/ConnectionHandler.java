@@ -1,8 +1,8 @@
-package com.weimin.ws.handler;
+package com.weimin.common.ws.handler;
 
 import cn.hutool.json.JSONUtil;
-import com.weimin.entity.Message;
-import com.weimin.util.ChannelUtils;
+import com.weimin.common.entity.Message;
+import com.weimin.common.ws.util.ChannelUtils;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;

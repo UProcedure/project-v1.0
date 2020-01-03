@@ -1,7 +1,7 @@
-package com.weimin.service;
+package com.weimin.user.service;
 
 import com.weimin.common.base.IBaseService;
-import com.weimin.entity.Student;
+import com.weimin.user.entity.Student;
 
 /**
  * @author weimin

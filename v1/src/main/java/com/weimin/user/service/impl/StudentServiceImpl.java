@@ -1,10 +1,10 @@
-package com.weimin.service.impl;
+package com.weimin.user.service.impl;
 
 import com.weimin.common.base.BaseServiceImpl;
 import com.weimin.common.base.IBaseDao;
-import com.weimin.entity.Student;
-import com.weimin.mapper.StudentMapper;
-import com.weimin.service.IStudentService;
+import com.weimin.user.entity.Student;
+import com.weimin.user.mapper.StudentMapper;
+import com.weimin.user.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

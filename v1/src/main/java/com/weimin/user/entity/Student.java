@@ -1,4 +1,4 @@
-package com.weimin.entity;
+package com.weimin.user.entity;
 
 import java.io.Serializable;
 import java.util.Date;

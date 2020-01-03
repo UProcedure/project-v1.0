@@ -1,4 +1,4 @@
-package com.weimin.entity;
+package com.weimin.common.entity;
 
 import lombok.Data;
 

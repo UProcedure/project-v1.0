@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author weimin
  */
 @SpringBootApplication
-@MapperScan("com.weimin.mapper")
+@MapperScan("com.weimin.user.mapper")
 public class V1Application {
 
     public static void main(String[] args) {

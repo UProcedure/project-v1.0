@@ -55,6 +55,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!--    TODO 引入devtools热部署   -->
@@ -70,6 +71,7 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>${mybatis.version}</version>
             <exclusions>
+                <!--     TODO 此次排除HikariCP,系统不是高并发系统,故选择功能更强大的druid连接池,若为高并发系统,则建议使用HikariCP,性能更强           -->
                 <exclusion>
                     <artifactId>HikariCP</artifactId>
                     <groupId>com.zaxxer</groupId>
@@ -110,7 +112,7 @@
             <version>${netty.version}</version>
         </dependency>
 
-        <!--    TODO 引入hutool    -->
+        <!--    TODO 引入hutool工具    -->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
