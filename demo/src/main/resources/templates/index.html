@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+key:<input type="text" id="key"/></br>
+iv:<input type="text" id="iv"/></br>
+<input type="button" value="加密" id="add"/><input type="button" value="解密" id="up"/><input type="button" value="对比" id="compared"/></br>
+输入：<textarea type="text" id="in" rows="5" cols="100"></textarea></br>
+输出：<textarea type="text" id="out" rows="5" cols="100"></textarea></br>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<script type="text/javascript">
+$(function () {
+    $("#add").click(function () {
+        var key = $("#key").val();
+        var x = $("#in").val();
+        var iv = $("#iv").val();
+        $.ajax({
+            url:"/add?key="+key+"&iv="+iv+"&text="+x,
+            success:function (data) {
+                $("#out").val(data)
+            }
+        })
+
+    })
+
+    $("#up").click(function () {
+        var key = $("#key").val();
+        var x = $("#in").val();
+        var iv = $("#iv").val();
+        $.ajax({
+            url:"/up?key="+key+"&iv="+iv+"&text="+x,
+            success:function (data) {
+                $("#out").val(data)
+            }
+        })
+
+    })
+
+    $("#compared").click(function () {
+        var key = $("#out").val();
+        var x = $("#in").val();
+        if(key === x){
+            alert('true')
+        }else {
+            alert('false')
+        }
+    })
+
+})
+</script>
+</body>
+</html>

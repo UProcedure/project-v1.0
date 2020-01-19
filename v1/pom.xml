@@ -79,7 +79,7 @@
             </exclusions>
         </dependency>
 
-        <!--    TODO 引入druid连接池   -->
+        <!--    TODO 引入druid连接池，提供各种监控功能   -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
@@ -132,7 +132,6 @@
             <artifactId>shiro-spring</artifactId>
             <version>${shiro.version}</version>
         </dependency>
-
 
     </dependencies>
 
